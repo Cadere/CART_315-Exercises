@@ -16,8 +16,6 @@ public class rotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-	if (Input.GetButton("Fire1")){
      	this.transform.Rotate(0,rotateSpeed,0);
-	}
     }
 }
