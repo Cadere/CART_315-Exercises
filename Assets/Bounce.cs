@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotate : MonoBehaviour
+public class Bounce : MonoBehaviour
 {
-
-    public float rotateSpeed = 0.1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +11,13 @@ public class rotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-	if (Input.GetButton("Fire1")){
-     	this.transform.Rotate(0,rotateSpeed,0);
-	}
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+	other.GetComponent<Rigidbody>().AddForce(0,700.0f,0);
     }
 }
